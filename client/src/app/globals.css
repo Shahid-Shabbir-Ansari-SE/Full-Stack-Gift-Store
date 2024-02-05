@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Noto Regular,Arial, Helvetica, sans-serif;
+  src: url(/public/fonts/NotoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Noto Bold,Arial, Helvetica, sans-serif;
+  src: url(/public/fonts/NotoSans-Bold.ttf);
+}

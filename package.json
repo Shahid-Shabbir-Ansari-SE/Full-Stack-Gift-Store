@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "installClient": "npm install --prefix client",
+    "installServer": "npm install --prefix server",
+    "install": "npm run installClient && npm run installServer",
+    "format": "npm run format-client && npm run format-server",
+    "lint": "npm run lint-client && npm run lint-server",
+    "format-client": "npm run --prefix client format",
+    "format-server": "npm run --prefix server format",
+    "lint-client": "npm run --prefix client lint",
+    "lint-server": "npm run --prefix server lint",
+    "lint-format": "npm run lint && npm run format",
+    "build-client": "npm run --prefix client build",
+    "build-server": "npm run --prefix server build",
+    "build": "npm run build-client && npm run build-server"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
