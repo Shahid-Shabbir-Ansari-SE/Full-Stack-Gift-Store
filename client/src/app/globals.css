@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Noto Regular,Arial, Helvetica, sans-serif;
-  src: url(/public/fonts/NotoSans-Regular.ttf);
+  font-family: NOTHS Sans No3 Regular;
+  src: url(/fonts/NotoSans-Regular.woff2);
 }
 
 @font-face {
-  font-family: Noto Bold,Arial, Helvetica, sans-serif;
-  src: url(/public/fonts/NotoSans-Bold.ttf);
+  font-family: NOTHS Sans No3 Bold;
+  src: url(/fonts/NotoSans-Bold.woff2);
 }
