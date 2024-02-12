@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import '@radix-ui/themes/styles.css'
-import { Theme } from '@radix-ui/themes'
+import TopBar from '@/components/layout/topBar'
+import NavBar from '@/components/layout/navBar'
 
 export const metadata: Metadata = {
   title:
@@ -24,10 +24,10 @@ export default function RootLayout({
           type='image/x-icon'
         />
       </head>
-      <body>
-        <Theme>
-          <section className='font-NotoRegular'>{children}</section>
-        </Theme>
+      <body className='font-NotoRegular'>
+        <TopBar />
+        <NavBar />
+        {children}
       </body>
     </html>
   )

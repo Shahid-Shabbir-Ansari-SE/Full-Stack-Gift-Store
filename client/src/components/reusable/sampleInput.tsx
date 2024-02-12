@@ -6,7 +6,11 @@ interface SampleInputProps {
   inputIcon: keyof typeof icons
   inputStyle: string
   mainDivStyle: string
-  iconStyle: string
+  iconStyle: string | undefined
+  handleFunction?: React.ChangeEventHandler<HTMLInputElement> | undefined
+  onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined
+  inputName?: string
+  inputType?: string
 }
 
 const SampleInput: React.FC<SampleInputProps> = ({
@@ -14,14 +18,24 @@ const SampleInput: React.FC<SampleInputProps> = ({
   inputIcon,
   inputStyle,
   mainDivStyle,
-  iconStyle
+  iconStyle,
+  handleFunction,
+  onBlur,
+  inputName,
+  inputType
 }) => {
   const IconComponent = icons[inputIcon]
 
   return (
     <div className={mainDivStyle}>
-      <input className={inputStyle} placeholder={placeHolder} type='text' />
-      <button className={iconStyle}>{<IconComponent />}</button>
+      <input
+      name={inputName}
+      onChange={handleFunction}
+      className={inputStyle}
+      type={inputType}
+      onBlur={onBlur}
+      placeholder={placeHolder} />
+      <button type='button' className={iconStyle}>{<IconComponent />}</button>
     </div>
   )
 }

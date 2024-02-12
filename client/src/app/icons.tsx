@@ -29,7 +29,8 @@ const icons = {
   upwork: SiUpwork,
   info: IoIosInformationCircle,
   search: IoSearch,
-  delivery: TbTruckDelivery
+  delivery: TbTruckDelivery,
+  iconNull: () => null
 }
 
 export default icons

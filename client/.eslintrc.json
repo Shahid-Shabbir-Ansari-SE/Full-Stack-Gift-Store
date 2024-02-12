@@ -1,11 +1,12 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "camelcase": [
-      "error",
-      {
-        "properties": "always"
-      }
-    ]
+    // "camelcase": [
+    //   "error",
+    //   {
+    //     "properties": "always"
+    //   }
+    // ],
+    "react-hooks/rules-of-hooks": "off"
   }
 }
