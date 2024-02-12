@@ -3,6 +3,7 @@ import Image from 'next/image'
 import SampleInput from '../reusable/sampleInput'
 import Link from 'next/link'
 import icons from '@/app/icons'
+import NavBarPopOver from '../specific/navBarPopOver'
 
 const navBar = () => {
   return (
@@ -27,11 +28,12 @@ const navBar = () => {
           iconStyle='py-1 px-2 text-lg w-5'
         />
       </div>
-      <div className='flex w-1/4 justify-end gap-7'>
-        <Link href='#' className='flex flex-col items-center'>
-          <icons.user className='h-7 w-7' />
-          <span className='text-xs'>My Accounts</span>
-        </Link>
+      <div className='flex w-1/4 items-center justify-end gap-7'>
+        {/* <button className='flex flex-col items-center'> */}
+        {/* <icons.user className='h-7 w-7' /> */}
+        {/* <span className='text-xs'>My Accounts</span> */}
+        <NavBarPopOver />
+        {/* </button> */}
         <Link href='#' className='flex flex-col items-center'>
           <icons.wishlist className='h-7 w-7' />
           <span className='text-xs'>Favourites</span>
