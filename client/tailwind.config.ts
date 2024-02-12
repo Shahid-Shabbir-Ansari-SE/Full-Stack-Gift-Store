@@ -34,7 +34,8 @@ const config: Config = {
         yellow: '#FBD033',
         basePurple: '#7066E0',
         lightGrey: '#E9E9EA',
-        baseBlack: '#1e1e29'
+        baseBlack: '#1e1e29',
+        baseGrey: '#BBBBBE'
       }
     }
   },

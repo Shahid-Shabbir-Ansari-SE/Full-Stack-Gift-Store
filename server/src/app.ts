@@ -4,15 +4,24 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import connectToDatabase from './configs/db.config'
 import { sequelize } from './configs/sequelize.config'
+import authRoutes from './routes/auth.routes'
+import './configs/passport.config'
+import passport from 'passport'
 
 /* ------------- Initialize Express & Port ------------- */
 const app = express()
 const port = process.env.APP_PORT || 3000 // Set a default port if APP_PORT is not defined
 
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true
+}
+
 /* ------------------- Middlewares -------------------- */
 dotenv.config()
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
+app.use(passport.initialize())
 
 /* ------------------- Connect to DB ------------------- */
 connectToDatabase()
@@ -23,7 +32,7 @@ sequelize.sync().then(() => {
 })
 
 /* ---------------------- Routes ---------------------- */
-
+app.use('/auth', authRoutes)
 
 /* ------------------- Server Listen ------------------- */
 app.listen(port, () => {

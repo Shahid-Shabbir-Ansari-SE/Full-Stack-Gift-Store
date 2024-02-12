@@ -1,3 +1,4 @@
+'use cient'
 import React from 'react'
 
 interface sampleButtonProps {
@@ -13,7 +14,10 @@ const sampleButton = ({
 }: sampleButtonProps) => {
   return (
     <div>
-      <button className={buttonStyle} onClick={() => buttonFunction()}>
+      <button
+        className={buttonStyle}
+        onClick={buttonFunction as React.MouseEventHandler<HTMLButtonElement>}
+      >
         {buttonText}
       </button>
     </div>
