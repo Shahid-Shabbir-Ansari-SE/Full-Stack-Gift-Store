@@ -13,6 +13,8 @@ import { IoIosInformationCircle } from 'react-icons/io'
 import { IoSearch } from 'react-icons/io5'
 import { TbUserCircle } from 'react-icons/tb'
 import { TbTruckDelivery } from 'react-icons/tb'
+import { FaBars } from 'react-icons/fa6'
+import { BiExit } from 'react-icons/bi'
 
 const icons = {
   wishlist: FaRegHeart,
@@ -30,6 +32,8 @@ const icons = {
   info: IoIosInformationCircle,
   search: IoSearch,
   delivery: TbTruckDelivery,
+  bars: FaBars,
+  cross: BiExit,
   iconNull: () => null
 }
 

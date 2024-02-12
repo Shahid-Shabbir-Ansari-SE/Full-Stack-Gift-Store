@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className='font-NotoRegular'>
         <TopBar />
         <NavBar />
+        <hr />
         {children}
       </body>
     </html>

@@ -22,26 +22,16 @@ const navBarPopOver = (): any => {
 
   return (
     <div>
-      <Button
-        className='flex flex-col items-center text-black'
-        aria-describedby={id}
-        onClick={handleClick}
-        sx={{
-          color: 'black',
-          backgroundColor: 'transparent',
-          fontSize: '12px',
-          marginTop: '1px',
-          marginRight: '-10px',
-          textTransform: 'capitalize',
-          '&:hover': {
-            color: 'black',
-            backgroundColor: 'transparent'
-          }
-        }}
-      >
-        <icons.user className='h-7 w-7' />
-        <span className=''>My Accounts</span>
-      </Button>
+      <div className='flex flex-col justify-center items-center'>
+        <button
+          className='flex flex-col items-center text-black'
+          aria-describedby={id}
+          onClick={handleClick}
+        >
+          <icons.user className='h-7 w-7' />
+        </button>
+          <span className='text-xs  text-center hidden lg:block'>Accounts</span>
+      </div>
       <Popover
         className='-left-12'
         id={id}

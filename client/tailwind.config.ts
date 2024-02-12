@@ -36,8 +36,20 @@ const config: Config = {
         lightGrey: '#E9E9EA',
         baseBlack: '#1e1e29',
         baseGrey: '#BBBBBE'
-      }
-    }
+      },
+      keyframes: {
+        menuAnimation: {
+          "0%": {
+            left: "100",
+            top: "-100"
+          },
+          "100%": {
+            left: "0",
+            top: "100"
+          }
+        }
+      },
+    },
   },
   plugins: []
 }
