@@ -1,14 +1,15 @@
-import Card from "./card";
-import upCardProps from "./types/upCardProps";
+import Card from './card'
+import upCardProps from './types/upCardProps'
 
-const UpCard = ({cardImage, cardLink, cardTitle}: upCardProps) => {
-    return (
-        <Card cardImageLink={cardImage}
-            cardLink={cardLink}
-            cardTitle={cardTitle}
-            mainDivStyle={"flex-col justify-center items-center"}
-        />
-    )
+const UpCard = ({ cardImage, cardLink, cardTitle }: upCardProps) => {
+  return (
+    <Card
+      cardImageLink={cardImage}
+      cardLink={cardLink}
+      cardTitle={cardTitle}
+      mainDivStyle={'flex-col items-center justify-between h-60'}
+    />
+  )
 }
 
-export default UpCard;
+export default UpCard

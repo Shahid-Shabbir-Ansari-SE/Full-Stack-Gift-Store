@@ -1,5 +1,5 @@
 import React from 'react'
-import Image, { StaticImageData }  from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 interface cardProps {
@@ -9,20 +9,29 @@ interface cardProps {
   mainDivStyle: string
 }
 
-const Card = ({ cardImageLink, cardLink, cardTitle, mainDivStyle }: cardProps) => {
+const Card = ({
+  cardImageLink,
+  cardLink,
+  cardTitle,
+  mainDivStyle
+}: cardProps) => {
   return (
-      <Link href={cardLink}>
-        <div className={`bg-lightGrey w-[100%] pt-2 rounded-xl font-NotoBold flex ${mainDivStyle}`}>
-            <Image
-              height={0}
-              width={0}
-              className='rounded-t-lg w-full h-full'
-              src={cardImageLink}
-              alt='card'
-            />
-            <p className='text-base py-4'>{cardTitle}</p>
+    <Link href={cardLink}>
+      <div
+        className={`${mainDivStyle} flex w-[100%] rounded-xl bg-lightGrey font-NotoBold hover:ring-2 hover:ring-black`}
+      >
+        <div className='flex flex-[80%] items-center justify-center overflow-hidden'>
+          <Image
+            height={0}
+            width={0}
+            className='h-full w-full rounded-xl'
+            src={cardImageLink}
+            alt='card'
+          />
         </div>
-      </Link>
+        <p className='flex-[20%] py-4 text-base'>{cardTitle}</p>
+      </div>
+    </Link>
   )
 }
 
