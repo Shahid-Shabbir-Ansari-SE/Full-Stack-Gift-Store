@@ -10,8 +10,8 @@ import Menu from './menu'
 
 const navBar = () => {
   return (
-    <div className='grid grid-cols-10 grid-rows-2 md:grid-rows-1 lg:grid-rows-2 w-full gap-y-2 pt-2'>
-      <div className='col-start-1 col-end-3 pl-3 flex justify-start items-center md:col-end-2 lg:col-end-3'>
+    <div className='grid grid-cols-10 grid-rows-2 md:grid-rows-1 lg:grid-rows-2 w-full gap-y-2 md:py-2'>
+      <div className='col-start-1 col-end-3 pl-3 flex justify-start items-center md:col-end-3 lg:col-end-3'>
         <Link href='/'>
           <Image
             src='/images/logo.svg'
@@ -23,8 +23,8 @@ const navBar = () => {
         </Link>
       </div>
       <div className='md:flex md:justify-center md:items-center
-                      col-start-1 col-end-11 row-start-2 px-4 mt-2 
-                      md:row-start-1 md:col-start-3 md:col-end-7 lg:col-start-4 lg:col-end-8'>
+                      col-start-1 col-end-11 row-start-2 px-4 
+                      md:row-start-1 md:col-start-4 md:col-end-8 lg:col-start-4 lg:col-end-8'>
         <SampleInput
           placeHolder='Search out marketplace'
           inputIcon='search'

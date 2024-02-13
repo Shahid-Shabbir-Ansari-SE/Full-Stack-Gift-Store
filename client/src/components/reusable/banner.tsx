@@ -1,16 +1,16 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
+import Hero1 from "../../../public/images/homePage/hero1.webp"
+
 
 interface bannerProps {
   mainDivStyle: string
   title: string
   description: string
   button: string
-  image: string
-  headingsStyle: string
+  image: StaticImageData
   buttonStyle: string
-  paraStyle: string
-  secondDivStyle: string
+  paraStyle: string,
 }
 
 const banner: React.FC<bannerProps> = ({
@@ -19,17 +19,15 @@ const banner: React.FC<bannerProps> = ({
   description,
   button,
   image,
-  headingsStyle,
   buttonStyle,
-  paraStyle,
-  secondDivStyle
+  paraStyle
 }) => {
   return (
-    <div className={`px-6 ${mainDivStyle} row-span-2 flex w-full lg:h-[360px]`}>
+    <div className={`flex p-6 ${mainDivStyle} w-full lg:h-[360px]`}>
       <div
-        className={`flex w-full flex-col gap-3 font-NotoBold text-xl md:w-1/2 lg:w-1/2 ${headingsStyle}`}
+        className={`flex justify-center items-center mt-3 w-full flex-col gap-3 font-NotoBold md:w-1/2 lg:w-1/2`}
       >
-        <h1 className=''>
+        <h1 className='text-lg opacity-90'>
           {title.includes("Find original gifts they'll LOVE")
             ? title.split('gifts').map((text, index) => (
                 <React.Fragment key={index}>
@@ -39,16 +37,16 @@ const banner: React.FC<bannerProps> = ({
               ))
             : title}
         </h1>
-        <p className={paraStyle}>{description}</p>
-        <button className={buttonStyle}>{button}</button>
+        <p className={`${paraStyle} font-NotoRegular text-center`}>{description}</p>
+        <button className={`${buttonStyle} rounded-md px-4 py-2`}>{button}</button>
       </div>
-      <div className={`md:w-1/2 lg:relative lg:w-1/2 ${secondDivStyle}`}>
+      <div className={`md:w-1/2 lg:relative`}>
         <Image
           width={638}
           height={360}
           src={image}
           alt=''
-          className='h-full w-full rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:absolute lg:top-6 lg:h-[380px] lg:object-cover'
+          className='h-full w-full rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:absolute lg:top-8 lg:object-cover'
         />
       </div>
     </div>

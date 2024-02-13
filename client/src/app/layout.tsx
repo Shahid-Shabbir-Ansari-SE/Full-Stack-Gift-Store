@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import TopBar from '@/components/layout/topBar'
 import NavBar from '@/components/layout/navBar'
+import TopBanner from '@/components/specific/topBanner'
+import TopFeaturedProducts from '@/components/specific/topFeatuedProducts'
+import SampleImage from "../../public/images/homePage/hero1.webp"
 
 export const metadata: Metadata = {
   title:
@@ -27,7 +30,8 @@ export default function RootLayout({
       <body className='font-NotoRegular'>
         <TopBar />
         <NavBar />
-        <hr />
+        <TopBanner />
+        <TopFeaturedProducts />
         {children}
       </body>
     </html>
