@@ -85,7 +85,7 @@ const Menu = ({ menuDivStyle, menuUlStyle }: MenuProps) => {
 
       <div
         id='downloadMessage'
-        className={`${MenuOpen ? 'flex  items-center  justify-center border-b-2  border-t-[1px] border-baseGrey bg-lightGrey py-5' : 'hidden'}`}
+        className={`${MenuOpen ? 'flex w-full items-center justify-center border-b-2  border-t-[1px] border-baseGrey bg-lightGrey py-5' : 'hidden'}`}
       >
         <Button className='rounded-xl bg-basePurple px-8 capitalize text-white'>
           Download our app

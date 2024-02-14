@@ -6,8 +6,8 @@ import TopBanner from '@/components/layout/topBanner'
 import TopFeaturedProducts from '@/components/layout/topFeatuedProducts'
 import TopCarousel from '@/components/layout/topCarousel'
 import MidCrousel from '@/components/layout/midCrousel'
+import PricedCarousel from '@/components/layout/pricedCarousel'
 import SampleImage from '../../public/images/homePage/hero1.webp'
-import dynamic from 'next/dynamic'
 
 export const metadata: Metadata = {
   title:
@@ -37,6 +37,7 @@ export default function RootLayout({
         <TopFeaturedProducts />
         <TopCarousel />
         <MidCrousel />
+        <PricedCarousel />
         {children}
       </body>
     </html>

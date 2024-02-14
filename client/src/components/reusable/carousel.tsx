@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import crouselCardProps from './types/crouselCardProps'
+import React, { useState } from 'react'
+import SampleCarouselItemType from './sampleData/types/sampleCoruselItemType'
 import CrouselCard from './crouselCard'
+import PricedCard from './pricedCard'
 
 interface CarouselProps {
-  items: crouselCardProps[]
+  items: SampleCarouselItemType[]
   slidesToShow?: number
+  carouselType: 'simple' | 'priced'
 }
 
-const Carousel = ({ items, slidesToShow = 4 }: CarouselProps) => {
+const Carousel = ({
+  items,
+  slidesToShow = 4,
+  carouselType = 'simple'
+}: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const totalSlides = Math.ceil(items.length - slidesToShow + 1)
 
@@ -19,19 +25,32 @@ const Carousel = ({ items, slidesToShow = 4 }: CarouselProps) => {
   }
 
   return (
-    <div className='relative flex flex-col px-4'>
+    <div className='relative flex flex-col'>
       <div className='relative flex overflow-x-hidden'>
-        <div className='flex gap-x-4 py-2'>
+        <div className='flex gap-x-4 px-4 py-2'>
           {items
             .slice(currentIndex, currentIndex + slidesToShow)
-            .map((item, index) => (
-              <CrouselCard
-                cardImage={item.cardImage}
-                cardLink={item.cardLink}
-                cardTitle={item.cardTitle}
-                key={index}
-              />
-            ))}
+            .map((item, index) =>
+              carouselType === 'simple' ? (
+                <CrouselCard
+                  cardImage={item.cardImage}
+                  cardLink={item.cardLink}
+                  cardTitle={item.cardTitle}
+                  key={index}
+                />
+              ) : (
+                <PricedCard
+                  cardImage={item.cardImage}
+                  cardLink={item.cardLink}
+                  cardTitle={item.cardTitle}
+                  imageStyle=''
+                  itemPrice={item.cardPrice}
+                  mainDivStyle=''
+                  itemDiscount={item.discount}
+                  key={index}
+                />
+              )
+            )}
         </div>
       </div>
 
