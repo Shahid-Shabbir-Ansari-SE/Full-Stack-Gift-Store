@@ -1,5 +1,5 @@
 import BirthdayIdeas from '../reusable/birthdayIdeas'
-import SampleImage from '../../../public/images/homePage/hero2.png'
+import SampleImage from '../../../public/images/homePage/feat-img-1.webp'
 
 const BirtdayIdeasCollection = () => {
   return (
