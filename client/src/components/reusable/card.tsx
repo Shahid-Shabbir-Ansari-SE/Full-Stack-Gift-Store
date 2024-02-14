@@ -7,13 +7,15 @@ interface cardProps {
   cardLink: string
   cardTitle: string
   mainDivStyle: string
+  imageStyle: string
 }
 
 const Card = ({
   cardImageLink,
   cardLink,
   cardTitle,
-  mainDivStyle
+  mainDivStyle,
+  imageStyle
 }: cardProps) => {
   return (
     <Link href={cardLink}>
@@ -24,7 +26,7 @@ const Card = ({
           <Image
             height={0}
             width={0}
-            className='h-full w-full rounded-xl'
+            className={`h-full w-full ${imageStyle}`}
             src={cardImageLink}
             alt='card'
           />

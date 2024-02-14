@@ -7,6 +7,7 @@ const DownCard = ({ cardImage, cardLink, cardTitle }: downCardProps) => {
       cardImageLink={cardImage}
       cardLink={cardLink}
       cardTitle={cardTitle}
+      imageStyle='rounded-b-xl'
       mainDivStyle={'flex-col-reverse justify-center items-center h-60'}
     />
   )

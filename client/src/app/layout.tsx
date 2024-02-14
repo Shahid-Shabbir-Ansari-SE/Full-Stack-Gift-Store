@@ -7,6 +7,7 @@ import TopFeaturedProducts from '@/components/layout/topFeatuedProducts'
 import TopCarousel from '@/components/layout/topCarousel'
 import MidCrousel from '@/components/layout/midCrousel'
 import SampleImage from '../../public/images/homePage/hero1.webp'
+import dynamic from 'next/dynamic'
 
 export const metadata: Metadata = {
   title:

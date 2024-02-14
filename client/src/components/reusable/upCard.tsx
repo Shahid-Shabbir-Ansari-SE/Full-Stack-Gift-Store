@@ -7,6 +7,7 @@ const UpCard = ({ cardImage, cardLink, cardTitle }: upCardProps) => {
       cardImageLink={cardImage}
       cardLink={cardLink}
       cardTitle={cardTitle}
+      imageStyle='rounded-t-xl'
       mainDivStyle={'flex-col items-center justify-between h-60'}
     />
   )
