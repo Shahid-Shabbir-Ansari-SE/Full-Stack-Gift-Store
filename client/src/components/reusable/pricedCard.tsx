@@ -15,7 +15,7 @@ const PricedCard = ({
   return (
     <Link href={cardLink}>
       <div
-        className={`relative flex  h-60 w-[100%] flex-col rounded-xl font-NotoRegular hover:ring-1 hover:ring-black`}
+        className={`relative flex h-60 w-[100%] flex-col rounded-xl font-NotoRegular hover:ring-1 hover:ring-black`}
       >
         <div className='flex flex-[80%] items-center justify-center overflow-hidden'>
           <Image

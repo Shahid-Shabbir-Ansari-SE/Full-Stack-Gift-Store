@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
-import Hero1 from "../../../public/images/homePage/hero1.webp"
-
+import Hero1 from '../../../public/images/homePage/hero1.webp'
 
 interface bannerProps {
   mainDivStyle: string
@@ -10,7 +9,7 @@ interface bannerProps {
   button: string
   image: StaticImageData
   buttonStyle: string
-  paraStyle: string,
+  paraStyle: string
 }
 
 const banner: React.FC<bannerProps> = ({
@@ -25,9 +24,9 @@ const banner: React.FC<bannerProps> = ({
   return (
     <div className={`flex p-6 ${mainDivStyle} w-full lg:h-[360px]`}>
       <div
-        className={`flex justify-center items-center mt-3 w-full flex-col gap-3 font-NotoBold md:w-1/2 lg:w-1/2`}
+        className={`mt-3 flex w-full flex-col items-center justify-center gap-3 font-NotoBold md:w-1/2 lg:w-1/2`}
       >
-        <h1 className='text-lg opacity-90'>
+        <h2 className='text-md opacity-90 md:text-lg'>
           {title.includes("Find original gifts they'll LOVE")
             ? title.split('gifts').map((text, index) => (
                 <React.Fragment key={index}>
@@ -36,9 +35,13 @@ const banner: React.FC<bannerProps> = ({
                 </React.Fragment>
               ))
             : title}
-        </h1>
-        <p className={`${paraStyle} font-NotoRegular text-center`}>{description}</p>
-        <button className={`${buttonStyle} rounded-md px-4 py-2`}>{button}</button>
+        </h2>
+        <p className={`${paraStyle} text-center font-NotoRegular`}>
+          {description}
+        </p>
+        <button className={`${buttonStyle} rounded-md px-4 py-2`}>
+          {button}
+        </button>
       </div>
       <div className={`md:w-1/2 lg:relative`}>
         <Image
@@ -53,7 +56,8 @@ const banner: React.FC<bannerProps> = ({
   )
 }
 
-{/* <Banner
+{
+  /* <Banner
   mainDivStyle={
     'bg-basePurple flex-col flex-col-reverse md:flex-row md:w-full col-span-2 lg:flex-row py-6 lg:py-0'
   }
@@ -69,6 +73,7 @@ const banner: React.FC<bannerProps> = ({
     'bg-darkPurple text-white px-[52px] py-[10px] text-base font-NotoBold rounded-lg lg:mt-8'
   }
   secondDivStyle={'justify-end flex'}
-/> */}
+/> */
+}
 
 export default banner

@@ -11,6 +11,7 @@ const config: Config = {
       xs: '12px',
       sm: '16px',
       base: '18px',
+      md: '24px',
       lg: '28px',
       xl: '32px'
     },
@@ -37,6 +38,7 @@ const config: Config = {
         baseBlack: '#1e1e29',
         baseGrey: '#BBBBBE',
         lightPink: "#F9D2C3",
+        baseRed: "#F2879D",
         white: "#FFF",
       },
       keyframes: {

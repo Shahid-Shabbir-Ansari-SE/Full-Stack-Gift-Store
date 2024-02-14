@@ -7,6 +7,10 @@ import TopFeaturedProducts from '@/components/layout/topFeatuedProducts'
 import TopCarousel from '@/components/layout/topCarousel'
 import MidCrousel from '@/components/layout/midCrousel'
 import PricedCarousel from '@/components/layout/pricedCarousel'
+import MidBanner from '@/components/layout/midBanner'
+import BottomCrousel from '@/components/layout/bottomCarousel'
+import IntroItemsCollection from '@/components/layout/introItemsCollection'
+import BottomBanner from '@/components/layout/bottomBanner'
 import SampleImage from '../../public/images/homePage/hero1.webp'
 
 export const metadata: Metadata = {
@@ -38,6 +42,10 @@ export default function RootLayout({
         <TopCarousel />
         <MidCrousel />
         <PricedCarousel />
+        <MidBanner />
+        <BottomCrousel />
+        <IntroItemsCollection />
+        <BottomBanner />
         {children}
       </body>
     </html>

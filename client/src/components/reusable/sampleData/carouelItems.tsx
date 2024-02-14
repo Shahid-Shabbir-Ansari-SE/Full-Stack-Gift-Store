@@ -8,7 +8,7 @@ const SampleCarouselItem: SampleCarouselItemType[] = [
     cardLink: '#',
     cardTitle: 'Product 1',
     cardPrice: 120,
-    discount: 0
+    discount: 50
   },
   {
     cardImage: SampleImage2,
