@@ -9,7 +9,7 @@ const PricedCarousel = () => {
       <Carousel
         items={SampleCarouselItem}
         carouselType='priced'
-        slidesToShow={5}
+        // slidesToShow=
       />
     </div>
   )

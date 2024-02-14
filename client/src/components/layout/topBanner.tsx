@@ -1,5 +1,5 @@
 import Banner from '../reusable/banner'
-import BannerImage from '../../../public/images/homePage/hero1.webp'
+import BannerImage from '../../../public/images/homePage/bannerImage1.webp'
 
 const TopBanner = () => {
   return (

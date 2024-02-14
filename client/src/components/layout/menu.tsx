@@ -10,7 +10,10 @@ interface MenuProps {
 }
 
 const Menu = ({ menuDivStyle, menuUlStyle }: MenuProps) => {
-  let [MenuOpen, setMenuOpen] = useState(false)
+  const [MenuOpen, setMenuOpen] = useState(false)
+  const [windowCurrentWidth, setWindoCurrentwWidth] = useState(
+    window.innerWidth
+  )
 
   const handleToggleMenu = () => {
     const menuMainDiv = document.getElementById('menuMainDiv')
@@ -57,6 +60,10 @@ const Menu = ({ menuDivStyle, menuUlStyle }: MenuProps) => {
     }
   }
 
+  const handleWidthChange = () => {
+    setWindoCurrentwWidth(window.innerWidth)
+  }
+  window.addEventListener('resize', handleWidthChange)
   return (
     <div
       id='menuMainDiv'
@@ -66,21 +73,23 @@ const Menu = ({ menuDivStyle, menuUlStyle }: MenuProps) => {
         <p id='shopMessage' className={`${MenuOpen ? 'block' : 'hidden'}`}>
           Shop by category
         </p>
-        <Button
-          id='menuBarsButton'
-          className='lg:hidden'
-          onClick={handleToggleMenu}
-          sx={{
-            color: 'black',
-            backgroundColor: 'transparent'
-          }}
-        >
-          {MenuOpen ? (
-            <icons.cross className='h-9 w-7' />
-          ) : (
-            <icons.bars className='h-9 w-7' />
-          )}
-        </Button>
+        {windowCurrentWidth < 1024 && (
+          <Button
+            id='menuBarsButton'
+            className='lg:hidden'
+            onClick={handleToggleMenu}
+            sx={{
+              color: 'black',
+              backgroundColor: 'transparent'
+            }}
+          >
+            {MenuOpen ? (
+              <icons.cross className='h-9 w-7' />
+            ) : (
+              <icons.bars className='h-9 w-7' />
+            )}
+          </Button>
+        )}
       </div>
 
       <div

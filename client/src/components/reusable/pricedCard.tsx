@@ -21,7 +21,7 @@ const PricedCard = ({
           <Image
             height={0}
             width={0}
-            className={`h-full w-full rounded-xl`}
+            className={`h-full w-full rounded-xl object-cover`}
             src={cardImage}
             alt='pricedCard'
           />

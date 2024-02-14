@@ -11,7 +11,7 @@ interface CarouselProps {
 
 const Carousel = ({
   items,
-  slidesToShow = 4,
+  slidesToShow = 6,
   carouselType = 'simple'
 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
