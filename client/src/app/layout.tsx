@@ -11,6 +11,7 @@ import MidBanner from '@/components/layout/midBanner'
 import BottomCrousel from '@/components/layout/bottomCarousel'
 import IntroItemsCollection from '@/components/layout/introItemsCollection'
 import BottomBanner from '@/components/layout/bottomBanner'
+import BirtdayIdeasCollection from '@/components/layout/birthdayIdeasCollection'
 import SampleImage from '../../public/images/homePage/hero1.webp'
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default function RootLayout({
         <BottomCrousel />
         <IntroItemsCollection />
         <BottomBanner />
+        <BirtdayIdeasCollection />
         {children}
       </body>
     </html>
