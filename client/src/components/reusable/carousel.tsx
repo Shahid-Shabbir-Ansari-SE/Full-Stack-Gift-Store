@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SampleCarouselItemType from './sampleData/types/sampleCoruselItemType'
 import CrouselCard from './crouselCard'
 import PricedCard from './pricedCard'
@@ -11,12 +11,22 @@ interface CarouselProps {
 
 const Carousel = ({
   items,
-  slidesToShow = 6,
+  slidesToShow = 5,
   carouselType = 'simple'
 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const totalSlides = Math.ceil(items.length - slidesToShow + 1)
-
+  // This Part is done to automaticaly change number of slides
+  // Start
+  const [totalSlidesToShow, setTotalSlidesToShow] = useState(slidesToShow)
+  const handleWidthChange = () => {
+    if (window.innerWidth <= 640) setTotalSlidesToShow(4)
+    else if (window.innerWidth <= 1024) setTotalSlidesToShow(5)
+    else setTotalSlidesToShow(6)
+  }
+  useEffect(handleWidthChange, [])
+  window.addEventListener('resize', handleWidthChange)
+  // End
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides)
   }
@@ -29,7 +39,7 @@ const Carousel = ({
       <div className='relative flex overflow-x-hidden'>
         <div className='flex gap-x-4 px-4 py-2'>
           {items
-            .slice(currentIndex, currentIndex + slidesToShow)
+            .slice(currentIndex, currentIndex + totalSlidesToShow)
             .map((item, index) =>
               carouselType === 'simple' ? (
                 <CrouselCard
