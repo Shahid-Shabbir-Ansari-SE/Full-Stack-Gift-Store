@@ -39,6 +39,9 @@ const config: Config = {
         baseGrey: '#BBBBBE',
         lightPink: "#F9D2C3",
         baseRed: "#F2879D",
+        lightCoral: "#FeF4F3",
+        baseCoral: "#DBFBDD",
+        darkCoral: "#C3F8C7",
         white: "#FFF",
       },
       keyframes: {

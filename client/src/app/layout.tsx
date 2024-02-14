@@ -12,6 +12,8 @@ import BottomCrousel from '@/components/layout/bottomCarousel'
 import IntroItemsCollection from '@/components/layout/introItemsCollection'
 import BottomBanner from '@/components/layout/bottomBanner'
 import BirtdayIdeasCollection from '@/components/layout/birthdayIdeasCollection'
+import GiftsForAll from '@/components/layout/giftsForAll'
+import Subscription from '@/components/layout/subscription'
 import SampleImage from '../../public/images/homePage/hero1.webp'
 
 export const metadata: Metadata = {
@@ -48,6 +50,8 @@ export default function RootLayout({
         <IntroItemsCollection />
         <BottomBanner />
         <BirtdayIdeasCollection />
+        <GiftsForAll />
+        <Subscription />
         {children}
       </body>
     </html>

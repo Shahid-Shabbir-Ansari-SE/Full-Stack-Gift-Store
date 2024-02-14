@@ -11,7 +11,7 @@ const IntroCard = ({
     <div className='my-2 flex w-full flex-col items-start space-y-4 px-4 py-6 font-NotoRegular'>
       <Image
         src={cardImage}
-        className='h-[250px] w-[60%] rounded-xl object-cover md:w-[100%]'
+        className='h-[250px] w-[60%] rounded-xl object-cover'
         height={0}
         width={0}
         alt='intro-card'
