@@ -1,5 +1,5 @@
-import SampleCarouselItem from '../reusable/sampleData/carouelItems'
-import ItemsCollection from '../reusable/itemsCollection'
+import SampleCarouselItem from '@/components/reusable/sampleData/carouelItems'
+import ItemsCollection from '@/components/reusable/itemsCollection'
 
 const IntroItemsCollection = () => {
   return (

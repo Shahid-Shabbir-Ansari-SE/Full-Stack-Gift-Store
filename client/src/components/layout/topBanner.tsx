@@ -1,4 +1,4 @@
-import Banner from '../reusable/banner'
+import Banner from '@/components/reusable/banner'
 import BannerImage from '../../../public/images/homePage/bannerImage1.webp'
 
 const TopBanner = () => {

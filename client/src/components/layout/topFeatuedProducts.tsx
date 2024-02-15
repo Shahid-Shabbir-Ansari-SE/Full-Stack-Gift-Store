@@ -1,6 +1,6 @@
-import FeaturedProducts from '../reusable/featuredProducts'
-import DownCard from '../reusable/downCard'
-import sampleFeaturedItems from '../reusable/sampleData/featuredItems'
+import FeaturedProducts from '@/components/reusable/featuredProducts'
+import DownCard from '@/components/reusable/downCard'
+import sampleFeaturedItems from '@/components/reusable/sampleData/featuredItems'
 
 const TopFeaturedProducts = () => {
   return (

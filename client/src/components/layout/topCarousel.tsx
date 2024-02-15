@@ -1,6 +1,6 @@
 'use client'
-import Carousel from '../reusable/carousel'
-import SampleCarouselItem from '../reusable/sampleData/carouelItems'
+import Carousel from '@/components/reusable/carousel'
+import SampleCarouselItem from '@/components/reusable/sampleData/carouelItems'
 
 const TopCarousel = () => {
   return (

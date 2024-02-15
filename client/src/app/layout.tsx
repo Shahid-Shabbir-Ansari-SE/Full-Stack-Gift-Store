@@ -2,19 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import TopBar from '@/components/layout/topBar'
 import NavBar from '@/components/layout/navBar'
-import TopBanner from '@/components/layout/topBanner'
-import TopFeaturedProducts from '@/components/layout/topFeatuedProducts'
-import TopCarousel from '@/components/layout/topCarousel'
-import MidCrousel from '@/components/layout/midCrousel'
-import PricedCarousel from '@/components/layout/pricedCarousel'
-import MidBanner from '@/components/layout/midBanner'
-import BottomCrousel from '@/components/layout/bottomCarousel'
-import IntroItemsCollection from '@/components/layout/introItemsCollection'
-import BottomBanner from '@/components/layout/bottomBanner'
-import BirtdayIdeasCollection from '@/components/layout/birthdayIdeasCollection'
-import GiftsForAll from '@/components/layout/giftsForAll'
-import Subscription from '@/components/layout/subscription'
 import Footer from '@/components/layout/footer'
+import HomePage from './page'
 
 export const metadata: Metadata = {
   title:
@@ -40,20 +29,8 @@ export default function RootLayout({
       <body className='font-NotoRegular'>
         <TopBar />
         <NavBar />
-        <TopBanner />
-        <TopFeaturedProducts />
-        <TopCarousel />
-        <MidCrousel />
-        <PricedCarousel />
-        <MidBanner />
-        <BottomCrousel />
-        <IntroItemsCollection />
-        <BottomBanner />
-        <BirtdayIdeasCollection />
-        <GiftsForAll />
-        <Subscription />
-        <Footer />
         {children}
+        <Footer />
       </body>
     </html>
   )
