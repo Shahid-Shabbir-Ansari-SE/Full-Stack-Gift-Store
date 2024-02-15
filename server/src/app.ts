@@ -7,6 +7,7 @@ import { sequelize } from './configs/sequelize.config'
 import authRoutes from './routes/auth.routes'
 import './configs/passport.config'
 import passport from 'passport'
+import productsRoutes from './routes/product.routes'
 
 /* ------------- Initialize Express & Port ------------- */
 const app = express()
@@ -33,6 +34,7 @@ sequelize.sync().then(() => {
 
 /* ---------------------- Routes ---------------------- */
 app.use('/auth', authRoutes)
+app.use('/products', productsRoutes)
 
 /* ------------------- Server Listen ------------------- */
 app.listen(port, () => {
