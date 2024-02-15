@@ -18,9 +18,11 @@ const Carousel = ({
   const totalSlides = Math.ceil(items.length - slidesToShow + 1)
 
   const handlePrev = () => {
+    if (currentIndex === 0) return
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides)
   }
   const handleNext = () => {
+    if (currentIndex === totalSlides - 1) return
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides)
   }
 

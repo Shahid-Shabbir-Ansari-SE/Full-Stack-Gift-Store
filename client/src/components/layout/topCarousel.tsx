@@ -1,7 +1,6 @@
 'use client'
 import Carousel from '../reusable/carousel'
 import SampleCarouselItem from '../reusable/sampleData/carouelItems'
-import CrouselCard from '../reusable/crouselCard'
 
 const TopCarousel = () => {
   return (
