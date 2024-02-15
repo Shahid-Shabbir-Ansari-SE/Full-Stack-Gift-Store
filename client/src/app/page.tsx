@@ -11,6 +11,7 @@ import BirtdayIdeasCollection from '@/components/layout/birthdayIdeasCollection'
 import GiftsForAll from '@/components/layout/giftsForAll'
 import Subscription from '@/components/layout/subscription'
 
+
 const HomePage = () => {
   return (
     <>

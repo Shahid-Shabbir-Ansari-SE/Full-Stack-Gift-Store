@@ -15,6 +15,8 @@ import { TbUserCircle } from 'react-icons/tb'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { FaBars } from 'react-icons/fa6'
 import { BiExit } from 'react-icons/bi'
+import { RxCross2 } from 'react-icons/rx'
+import { IoMdStar } from 'react-icons/io'
 
 const icons = {
   wishlist: FaRegHeart,
@@ -34,7 +36,9 @@ const icons = {
   delivery: TbTruckDelivery,
   bars: FaBars,
   cross: BiExit,
-  iconNull: () => null
+  close: RxCross2,
+  starFilled: IoMdStar,
+  iconNull: () => null,
 }
 
 export default icons
