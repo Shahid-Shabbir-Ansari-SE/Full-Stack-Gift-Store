@@ -21,9 +21,9 @@ const SearchPage = () => {
     setIsFilterMobileMenuOpen(!isMobileFilterMenuOpen)
   }
   return (
-    <div className=''>
+    <div>
       <SearchedItem />
-      <div className='border-solid border-grey p-4 py-4 lg:border-b'>
+      <div className='w-screen border-solid border-grey p-4 py-4 lg:border-b'>
         <FilterSection toogleMobileFilterMenu={toogleMobileFilterMenu} />
       </div>
       <div className='flex space-x-2'>

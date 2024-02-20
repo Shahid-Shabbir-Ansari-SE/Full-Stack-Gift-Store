@@ -31,9 +31,6 @@ const SearchedProducts = () => {
 
   return (
     <div className='flex flex-wrap justify-center space-x-4 space-y-2 py-2'>
-      {/* {
-              SampleItems.filter(item => )
-          } */}
       {SampleItems.map((item) => (
         <>
           <div className='w-[45%] md:w-[30%]'>
