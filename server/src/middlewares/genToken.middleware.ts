@@ -12,6 +12,7 @@ const generatedToken = (
 ) => {
   try {
     const token = Jwt.sign({ id: user.id }, process.env.TOKEN_SECRET!)
+    console.log('token', token)
     res.cookie('token', token, {
       httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
@@ -19,7 +20,7 @@ const generatedToken = (
       path: '/'
     })
 
-    next()
+    // next()
   } catch (error) {
     next(error)
   }
