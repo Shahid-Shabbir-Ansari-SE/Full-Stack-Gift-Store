@@ -55,12 +55,18 @@ const navBarPopOver = (): any => {
       >
         <div className='grid w-[234px] gap-3 px-6 py-5'>
           <h1>Returning customer?</h1>
-          <Link className='w-full font-NotoBold text-basePurple' href='/'>
+          <Link
+            className='w-full font-NotoBold text-basePurple'
+            href='/user/sign-in'
+          >
             Sign in
           </Link>
           <hr className='my-2' />
           <h1>New here?</h1>
-          <Link className='w-full font-NotoBold text-basePurple' href='/'>
+          <Link
+            className='w-full font-NotoBold text-basePurple'
+            href='/user/register'
+          >
             Register
           </Link>
         </div>

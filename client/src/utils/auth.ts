@@ -39,7 +39,7 @@ export async function loginUser(props: userLoginProps) {
 
 export async function verifyToken(token: string): Promise<verifyTokenProps> {
   try {
-    const response = await axios.get(`${API_BASE_URL}/verify-token`, {
+    const response = await axios.get(`${API_BASE_URL}/auth/verify-token`, {
       withCredentials: true,
       headers: {
         'Content-Type': 'application/json',
