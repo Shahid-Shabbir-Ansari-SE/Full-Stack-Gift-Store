@@ -15,6 +15,7 @@ import { TbUserCircle } from 'react-icons/tb'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { RxCross2 } from 'react-icons/rx'
 import { IoMdStar } from 'react-icons/io'
+import { FaFilter } from 'react-icons/fa'
 
 const icons = {
   wishlist: FaRegHeart,
@@ -34,7 +35,8 @@ const icons = {
   delivery: TbTruckDelivery,
   iconNull: () => null,
   close: RxCross2,
-  starFilled: IoMdStar
+  starFilled: IoMdStar,
+  filter: FaFilter
 }
 
 export default icons
