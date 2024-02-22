@@ -1,11 +1,16 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import SampleInput from '../reusable/sampleInput'
 import Link from 'next/link'
 import icons from '@/app/icons'
 import NavBarPopOver from '../specific/navBarPopOver'
+import { useAtom } from 'jotai'
+import { cartTotalItemsAtom } from '@/states/cartAtom'
 
 const navBar = () => {
+  const [cartTotalItems] = useAtom(cartTotalItemsAtom)
+
   return (
     <div className='flex h-[80px] items-center justify-center px-6 pb-3 pt-4'>
       <div className='w-1/4'>
@@ -38,8 +43,11 @@ const navBar = () => {
           <icons.wishlist className='h-7 w-7' />
           <span className='text-xs'>Favourites</span>
         </Link>
-        <Link href='#' className='flex flex-col items-center'>
+        <Link href='/cart' className='relative flex flex-col items-center'>
           <icons.basket className='h-7 w-7' />
+          <span className='absolute -top-1.5 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-lightPurple font-NotoBold text-xs text-white'>
+            {cartTotalItems}
+          </span>
           <h1 className='text-xs'>Basket</h1>
         </Link>
       </div>

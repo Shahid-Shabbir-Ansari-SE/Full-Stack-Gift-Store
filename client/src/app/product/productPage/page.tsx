@@ -7,7 +7,11 @@ import icons from '@/app/icons'
 import { fetchById } from '@/utils/product'
 import { GetServerSideProps } from 'next'
 import Loading from '@/components/reusable/loading'
-import LoadingCard from '@/components/reusable/loadingCard'
+import { cartAtom, cartTotalItemsAtom } from '@/states/cartAtom'
+import { useAtom } from 'jotai'
+import { CartProduct } from '@/types/cart'
+import { cartProductsAtom } from '@/states/cartAtom'
+import { addToCart } from '@/utils/userCart'
 
 /* --------------- Interfaces --------------- */
 interface productPageProps {
@@ -46,18 +50,18 @@ const ukCountriesAndCodes = [
 ]
 
 /* ---------------- Component ---------------- */
-const productPage: React.FC<productPageProps> = ({}) => {
+const productPage: React.FC = ({}) => {
   const [product, setProduct] = React.useState<any>({})
   const [isLoading, setIsLoading] = React.useState<boolean>(true)
   const [quantity, setQuantity] = React.useState<number>(1)
   const [showMore, setShowMore] = React.useState<boolean>(false)
+  const [cartProducts, setCartProducts] = useAtom(cartProductsAtom)
 
   React.useEffect(() => {
     const fetchProduct = async () => {
-      const product = await fetchById(4)
+      const product = await fetchById(1)
       setProduct(product)
       setIsLoading(false)
-      console.log('Product:', product)
     }
     fetchProduct()
   }, [])
@@ -95,6 +99,76 @@ const productPage: React.FC<productPageProps> = ({}) => {
   const handleShowMore = () => {
     setShowMore(!showMore)
   }
+
+  const [cart, setCart] = useAtom(cartAtom)
+  const [cartTotal, setCartTotal] = useAtom(cartTotalItemsAtom)
+  const handleAddToCart = (product: { id: number }, quantity: number) => {
+    setCart((prevCart: any) => {
+      // Check if the product is already in the cart
+      const existingProductIndex = prevCart.findIndex(
+        (item: any) => item === product.id
+      )
+
+      if (existingProductIndex !== -1) {
+        // Product is already in the cart, update the quantity
+        const updatedCart = [...prevCart]
+        updatedCart[existingProductIndex] = {
+          id: product.id,
+          quantity: updatedCart[existingProductIndex].quantity + quantity
+        }
+        return updatedCart
+      } else {
+        // Product is not in the cart, add it
+        const updatedCart = [
+          ...prevCart,
+          { id: product.id, quantity: quantity }
+        ]
+        console.log('Cart:', updatedCart)
+        return updatedCart
+      }
+    })
+
+    setCartTotal((prevTotal: any) => {
+      const updatedTotal = prevTotal + quantity
+      return updatedTotal
+    })
+
+    // setCartProducts((prevCartProducts: any) => {
+    //   // Check if the product is already in cartProducts
+    //   const existingProductIndex = prevCartProducts.findIndex(
+    //     (item: any) => item.id === product.id
+    //   )
+
+    //   if (existingProductIndex !== -1) {
+    //     // Product is already in cartProducts, update the quantity
+    //     const updatedCartProducts = [...prevCartProducts]
+    //     updatedCartProducts[existingProductIndex] = {
+    //       id: product.id,
+    //       quantity:
+    //         updatedCartProducts[existingProductIndex].quantity + quantity
+    //     }
+
+    //     console.log('Cart Products:', updatedCartProducts)
+    //     return updatedCartProducts
+    //   } else {
+    //     // Product is not in cartProducts, add it
+    //     const updatedCartProducts = [
+    //       ...prevCartProducts,
+    //       { id: product.id, quantity: quantity }
+    //     ]
+    //     console.log('Cart Products:', updatedCartProducts)
+    //     return updatedCartProducts
+    //   }
+    // })
+    setCartProducts([{ productId: product.id, quantity: quantity }])
+  }
+  React.useEffect(() => {
+    console.log('cartProducts:', cartProducts)
+    // You can call addToCart here if you want to trigger the API call when cartProducts changes
+    if (cartProducts.length > 0) {
+      addToCart(cartProducts)
+    }
+  }, [cartProducts])
 
   return (
     <div className='mx-32 '>
@@ -162,7 +236,7 @@ const productPage: React.FC<productPageProps> = ({}) => {
               {isLoading ? (
                 <div className='h-7 w-20 animate-pulse rounded-lg bg-gray-300'></div>
               ) : (
-                <p>`£${product.regularPrice * quantity}`</p>
+                <p>£{(product.regularPrice * quantity).toFixed(2)}</p>
               )}
             </div>
           </div>
@@ -187,13 +261,12 @@ const productPage: React.FC<productPageProps> = ({}) => {
             <button className='flex h-[44px] w-[44px] items-center justify-center rounded-full border border-basePurple'>
               <icons.wishlist className='p-1 text-xl text-basePurple' />
             </button>
-            <SampleButton
-              buttonText='Add to basket'
-              buttonStyle='bg-lightPurple my-3 text-white w-[248px] px-10 h-[44px] rounded-md'
-              buttonClick={() => {
-                return console.log('Button Clicked')
-              }}
-            />
+            <button
+              className='my-3 h-[44px] w-[248px] rounded-md bg-lightPurple px-10 text-white'
+              onClick={() => handleAddToCart(product, quantity)}
+            >
+              Add to basket
+            </button>
           </div>
           <div className='flex flex-col gap-5 rounded-lg bg-lightBlue p-5'>
             <p className='font-NotoBold text-xs'>Estimated delivery to</p>
@@ -243,7 +316,7 @@ const productPage: React.FC<productPageProps> = ({}) => {
       <div
         className={`flex gap-6 overflow-hidden py-7 ${showMore ? 'max-h-full' : 'max-h-80'}`}
       >
-        <div className='w-[633px]'>
+        <div className='w-[755px]'>
           <strong className='text-[20px]'>Product Description</strong>
           <div>
             {isLoading ? (
@@ -333,3 +406,6 @@ const productPage: React.FC<productPageProps> = ({}) => {
 }
 
 export default productPage
+function useEffect(arg0: () => void, arg1: CartProduct[][]) {
+  throw new Error('Function not implemented.')
+}
