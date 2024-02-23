@@ -35,7 +35,8 @@ const config: Config = {
         basePurple: '#7066E0',
         lightGrey: '#E9E9EA',
         baseBlack: '#1e1e29',
-        baseGrey: '#BBBBBE'
+        baseGrey: '#BBBBBE',
+        basePink: '#F29387'
       }
     }
   },
