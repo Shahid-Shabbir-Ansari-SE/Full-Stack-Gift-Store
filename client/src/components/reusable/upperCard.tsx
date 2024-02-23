@@ -10,7 +10,7 @@ interface upperCardProps {
 
 const upperCard = ({ cardImageLink, cardLink, cardTitle }: upperCardProps) => {
   return (
-    <div className='bg-lightGrey rounded-lg font-NotoBold lg:h-[288px] lg:w-[308px]'>
+    <div className='cursor-pointer rounded-lg bg-lightGrey font-NotoBold hover:shadow-[0px_-2px_5px_0px_#00000024] lg:h-[288px] lg:w-[308px]'>
       <h1 className='flex h-[56px] items-center justify-center px-2'>
         {cardTitle}
       </h1>
