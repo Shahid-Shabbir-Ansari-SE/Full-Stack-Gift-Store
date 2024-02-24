@@ -11,7 +11,13 @@ const password = String(process.env.POSTGRES_PASSWORD)
 const sequelize = new Sequelize(database, username, password, {
   host: process.env.POSTGRES_HOST,
   port: Number(process.env.POSTGRES_PORT),
-  dialect: 'postgres'
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  }
 })
 
 /* ---------- Test Sequelize Database Connection --------- */

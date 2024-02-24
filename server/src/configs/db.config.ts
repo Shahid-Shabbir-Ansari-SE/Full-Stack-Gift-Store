@@ -13,6 +13,8 @@ interface DatabaseConfig {
   host: string
   port: number
   database: string
+  ssl: boolean
+  sslmode: string
 }
 
 /* ---------- PostgreSQL Connection Pool ---------- */
@@ -22,7 +24,9 @@ const createPool = () => {
     password: process.env.POSTGRES_PASSWORD || '',
     host: process.env.POSTGRES_HOST || '',
     port: parseInt(process.env.DB_PORT || '5432', 10),
-    database: process.env.POSTGRES_DATABASE || ''
+    database: process.env.POSTGRES_DATABASE || '',
+    ssl: true,
+    sslmode: 'require'
   }
 
   return new Pool(dbConfig as PoolConfig)
