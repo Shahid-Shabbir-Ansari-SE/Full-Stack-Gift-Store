@@ -12,7 +12,7 @@ import userCartRoutes from './routes/userCart.routes'
 
 /* ------------- Initialize Express & Port ------------- */
 const app = express()
-const port = process.env.APP_PORT || 3000 // Set a default port if APP_PORT is not defined
+const port = process.env.APP_PORT || 8080 // Set a default port if APP_PORT is not defined
 
 const corsOptions = {
   origin: 'http://localhost:3000',
